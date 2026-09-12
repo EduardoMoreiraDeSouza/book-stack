@@ -54,76 +54,24 @@
                 </tr>
                 </thead>
                 <tbody>
-                <!-- Linha 1 -->
-                <tr>
-                    <td>
-                        <div class="fw-medium">O Grande Gatsby</div>
-                    </td>
-                    <td>F. Scott Fitzgerald</td>
-                    <td><span class="badge bg-primary bg-opacity-10 text-primary">Ficção</span></td>
-                    <td class="text-muted">1925</td>
-                    <td>
-                        <a href="book-view.html" class="btn btn-sm btn-outline-primary me-1">Ver</a>
-                        <a href="book-create.html" class="btn btn-sm btn-outline-success me-1">Editar</a>
-                        <button class="btn btn-sm btn-outline-danger">Excluir</button>
-                    </td>
-                </tr>
-                <!-- Linha 2 -->
-                <tr>
-                    <td>
-                        <div class="fw-medium">A Sangue Frio</div>
-                    </td>
-                    <td>Harper Lee</td>
-                    <td><span class="badge bg-primary bg-opacity-10 text-primary">Ficção</span></td>
-                    <td class="text-muted">1960</td>
-                    <td>
-                        <a href="book-view.html" class="btn btn-sm btn-outline-primary me-1">Ver</a>
-                        <a href="book-create.html" class="btn btn-sm btn-outline-success me-1">Editar</a>
-                        <button class="btn btn-sm btn-outline-danger">Excluir</button>
-                    </td>
-                </tr>
-                <!-- Linha 3 -->
-                <tr>
-                    <td>
-                        <div class="fw-medium">1984</div>
-                    </td>
-                    <td>George Orwell</td>
-                    <td><span class="badge bg-primary bg-opacity-10 text-primary">Distopia</span></td>
-                    <td class="text-muted">1949</td>
-                    <td>
-                        <a href="book-view.html" class="btn btn-sm btn-outline-primary me-1">Ver</a>
-                        <a href="book-create.html" class="btn btn-sm btn-outline-success me-1">Editar</a>
-                        <button class="btn btn-sm btn-outline-danger">Excluir</button>
-                    </td>
-                </tr>
-                <!-- Linha 4 -->
-                <tr>
-                    <td>
-                        <div class="fw-medium">Harry Potter e a Pedra Filosofal</div>
-                    </td>
-                    <td>J.K. Rowling</td>
-                    <td><span class="badge bg-primary bg-opacity-10 text-primary">Fantasia</span></td>
-                    <td class="text-muted">1997</td>
-                    <td>
-                        <a href="book-view.html" class="btn btn-sm btn-outline-primary me-1">Ver</a>
-                        <a href="book-create.html" class="btn btn-sm btn-outline-success me-1">Editar</a>
-                        <button class="btn btn-sm btn-outline-danger">Excluir</button>
-                    </td>
-                </tr>
-                <!-- Linha 5 -->
-                <tr>
-                    <td>
-                        <div class="fw-medium">Orgulho e Preconceito</div>
-                    </td>
-                    <td>Jane Austen</td>
-                    <td><span class="badge bg-primary bg-opacity-10 text-primary">Romance</span></td>
-                    <td class="text-muted">1813</td>
-                    <td>
-                        <a href="book-view.html" class="btn btn-sm btn-outline-primary me-1">Ver</a>
-                        <a href="book-create.html" class="btn btn-sm btn-outline-success me-1">Editar</a>
-                        <button class="btn btn-sm btn-outline-danger">Excluir</button>
-                    </td>
-                </tr>
+
+                @foreach($books as $book)
+                    <tr>
+                        <td>
+                            <div class="fw-medium">{{$book['title']}}</div>
+                        </td>
+                        <td>{{$book['author']}}</td>
+                        <td><span class="badge bg-primary bg-opacity-10 text-primary">{{$book['genre']}}</span></td>
+                        <td class="text-muted">{{$book['published_year']}}</td>
+                        <td>
+                            <a href="{{route('books.show', $book['id'])}}" class="btn btn-sm btn-outline-primary me-1">Ver</a>
+                            <a href="book-create.html" class="btn btn-sm btn-outline-success me-1">Editar</a>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                        </td>
+                    </tr>
+
+                @endforeach
+
                 </tbody>
             </table>
         </div>
