@@ -11,7 +11,7 @@
 <!-- Navegação -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <a class="navbar-brand d-flex align-items-center" href="{{route('welcome')}}">
             <i class="bi bi-book me-2 fs-4"></i>
             Painel de Livros
         </a>
@@ -20,8 +20,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
-                <li class="nav-item"><a class="nav-link" href="books.html">Livros</a></li>
+                <li class="nav-item"><a class="nav-link active" href="{{route('welcome')}}">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('books.index')}}">Livros</a></li>
             </ul>
         </div>
     </div>
@@ -32,7 +32,7 @@
     <div class="container">
         <h1 class="display-4 fw-bold mb-3">Bem-vindo à Sua Biblioteca de Livros</h1>
         <p class="lead mb-4">Organize e gerencie sua coleção de livros com facilidade</p>
-        <a href="books.html" class="btn btn-light btn-lg px-5 fw-semibold">Navegar pela Coleção</a>
+        <a href="{{route('books.index')}}" class="btn btn-light btn-lg px-5 fw-semibold">Navegar pela Coleção</a>
     </div>
 </div>
 
